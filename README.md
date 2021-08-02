@@ -16,6 +16,18 @@ Would also like to try optimizing hyper parameters a bit more in depth.
 
 <img width="1133" alt="Untitled" src="https://user-images.githubusercontent.com/33467922/127799474-a89fafe0-debd-44d3-ae01-a8c09ca38982.png">
 
+## To run the web app locally:
+1. Run the following commands in the project's root directory to set up your database and model.
+
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Run the following command in the app's directory to run your web app.
+    `python run.py`
+
+3. Go to http://0.0.0.0:3001/
 
 # Acknowledgements
 * Udacity
