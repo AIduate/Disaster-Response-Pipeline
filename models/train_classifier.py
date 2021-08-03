@@ -95,8 +95,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
     
     results = {}
     for i in range(len(Y_test.columns)):
-        results[category_names[i]] = metrics.classification_report(Y_test.iloc[:,i], Y_pred[:,i])
-    return results
+        #results[category_names[i]] = metrics.classification_report(Y_test.iloc[:,i], Y_pred[:,i])
+        print(category_names[i])
+        print(metrics.classification_report(Y_test.iloc[:,i], Y_pred[:,i]))
+    #return results
 
 def save_model(model, model_filepath):
     """Method to save trained model.
