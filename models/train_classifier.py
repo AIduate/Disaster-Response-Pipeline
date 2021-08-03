@@ -71,9 +71,14 @@ def build_model():
     pipeline = Pipeline([
             ('vect', CountVectorizer(stop_words={'english'}, tokenizer=tokenize, min_df=0.01))
              ,('tfidf', TfidfTransformer())
-             ,('clf', MultiOutputClassifier(LogisticRegression(random_state=0), n_jobs=-1))
+             ,('clf', RandomForestClassifier())
             ])
-    return pipeline
+    parameters = {'vect__min_df':[0.01, 0.05]
+              ,'clf__max_depth': [10, 200]}
+
+    cv = GridSearchCV(pipeline, param_grid = parameters, cv = 3)
+    
+    return cv
 
 def evaluate_model(model, X_test, Y_test, category_names):
     """Method to apply and evaluate results from model.
@@ -103,7 +108,7 @@ def save_model(model, model_filepath):
             None
     """
     filename = model_filepath
-    pickle.dump(model, open(filename, 'wb'))
+    pickle.dump(model.best_estimator_, open(filename, 'wb'))
 
 
 def main():
