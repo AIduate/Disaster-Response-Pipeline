@@ -1,6 +1,6 @@
 # Disaster-Response-Pipeline
 
-The purpose of this project is to create a pipeline of data provided by Figure 8 to Udacity to be combined and cleaned and fed into a machine learning pipeline that will use nature language processing techniques to classify messages related to disasters to the most likely appropriate response.
+The purpose of this project is to create a pipeline of data provided by Figure 8 to Udacity to be combined and cleaned and fed into a machine learning pipeline that will use nature language processing techniques to classify messages related to disasters to the appropriate response of 36 categories. This concept is really useful for an organization to plan for and gather the resources for the responses needed in a more time efficient fashion. So many messages cannot be assessed manually in a timely manner and some responses required may not even be known without messages!
 
 ## Table of contents
 * [Results](#results)
